@@ -1,0 +1,403 @@
+﻿@charset "utf-8";
+
+/* #skyblue(【メインカラー】背景の色) */
+/* #f9b5f2(【ベースカラー】ヘッターの色) */
+/* #765506(【アクセントカラー】文字の色)) */
+
+@media screen and (min-width:768px){
+/* PC用CSS -------------- */
+.hoge{
+display: none;
+}
+}
+
+@media screen and (max-width:767px){
+/* スマホ用CSS -------------- */
+.hoge{
+display: none;
+}
+}
+
+/*　ハンバーガーメニュー　*/
+/*　ハンバーガーボタン　*/
+.hamburger {
+  display : block;
+  position: fixed;
+  z-index : 3;
+  right : 0px;
+  top   : 0px;
+  width : 42px;
+  height: 42px;
+  cursor: pointer;
+  text-align: center;
+ background : #765506;
+}
+.hamburger span {
+  display : block;
+  position: absolute;
+  width   : 30px;
+  height  : 2px ;
+  left    : 6px;
+  background : white;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition   : 0.3s ease-in-out;
+  transition        : 0.3s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+  top: 10px;
+}
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+.hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+/* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+  top : 16px;
+  left: 6px;
+  background :white;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform   : rotate(-45deg);
+  transform        : rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+  top: 16px;
+  background :white;
+  -webkit-transform: rotate(45deg);
+  -moz-transform   : rotate(45deg);
+  transform        : rotate(45deg);
+}
+
+nav.globalMenuSp {
+  position: fixed;
+  z-index : 2;
+  top  : 0;
+  left : 0;
+  color: red;
+  background: #765506;
+  text-align: center;
+  width: 100%;
+  opacity: 0;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+
+nav.globalMenuSp ul {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+nav.globalMenuSp ul li {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  transition: .4s all;
+}
+nav.globalMenuSp ul li:last-child {
+  padding-bottom: 0;
+}
+nav.globalMenuSp ul li:hover{
+  background :skyblue;
+}
+
+nav.globalMenuSp ul li a {
+  display: block;
+  color: white;
+  padding: 1em 0;
+  text-decoration :none;
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
+  opacity: 100;
+
+}
+
+/*最小で768pxまでハンバーガーメニューを非表示*/
+@media screen and (min-width:768px) {
+.globalMenuSp,.hamburger {
+    display:none;
+  }
+}
+
+/*最大で767pxまでナビゲーションを非表示*/
+@media screen and (max-width:767px) {
+#headnav ul li {
+    display:none;
+  }
+}
+
+/*　ハンバーガーメニューここまで　*/
+
+body{
+width: 100%;
+background: white;
+}
+
+header{
+max-width: 960px;
+margin: 0 auto;
+height: 80px;
+}
+
+#logo{
+height: 80px;
+display: flex;
+align-items: center;
+float: left;
+}
+
+/* ロゴにマウスオーバーすると透明化*/
+#logo a:hover img {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  -ms-filter: "alpha(opacity=70)";
+}
+
+#headnav{
+float: right;
+height: 80px;
+margin-right: 30px;
+text-decoration: none;
+}
+
+#nav1, #nav2, #nav3{
+color: #765506;
+font-size: 140%;
+display: inline;
+line-height:80px;
+padding: 0px 50px 0px 5px;
+border-left:solid 3px #765506;
+clear: both;
+}
+
+/* リンクの下線を消す*/
+#nav1 a, #nav2 a, #nav3 a{
+color: #765506;
+text-decoration: none;
+}
+
+/* ロゴにマウスオーバーすると透明化*/
+#nav1:hover{
+  opacity: 0.7;
+} 
+#nav2:hover{
+  opacity: 0.7;
+}
+#nav3:hover{
+  opacity: 0.7;
+}
+
+#contents{
+min-height: 400px;
+height: %;
+background-image: url(../images/background.jpg);
+background-repeat: no-repeat no-repeat;
+background-size: cover;
+margin-bottom: 100px;
+}
+
+#slide{
+padding-top: 50px;
+}
+
+#slide ul li{
+text-align : center
+}
+
+#slide ul li img{
+width: 100%;
+max-width: 960px;
+}
+
+#store{
+max-width: 960px;
+text-align: center;
+margin: 0 auto;
+}
+
+#storelogo img{
+display: inline-block;
+text-align: center;
+}
+
+#storegazo{
+padding-top: 20px ;
+}
+
+#store1{
+width: 33%;
+float: left;
+padding-bottom: 100px;
+}
+
+#store1 a:hover{
+opacity: 0.7;
+}
+
+#store1 a figcaption:hover{
+  opacity: 0.7;
+} 
+
+#store2{
+width: 33%;
+float: left;
+padding-bottom: 100px;
+}
+
+
+#store2 a:hover{
+  opacity: 0.7;
+}
+
+#store2 a figcaption:hover{
+  opacity: 0.7;
+} 
+
+#store3{
+width: 33%;
+float: left;
+padding-bottom: 100px;
+}
+
+#store3 a:hover{
+  opacity: 0.7;
+} 
+
+#store3 a figcaption:hover{
+  opacity: 0.7;
+} 
+
+
+/* リンクの下線を消す*/
+#store1 a, #store2 a, #store3 a{
+color: #765506;
+text-decoration: none;
+}
+
+#goods{
+height: 500px;
+clear: both;
+padding-top: 50px;
+text-align: center;
+margin: 0 auto;
+background-image: url(../images/background2.png);
+background-repeat: no-repeat no-repeat;
+background-size: cover;
+margin-bottom:100px;
+}
+
+#goodsgazo{
+margin: 0 auto;
+height: auto;
+max-width: 960px;
+color: #765506;
+padding-top: 40px ;
+}
+
+#goodsgazo h1{
+font-size: 30px;
+}
+
+#goods1 a, #goods2 a, #goods3 a, #goods4 a{
+color: #765506;
+text-decoration: none;
+}
+
+#goods1 a:hover,#goods2 a:hover,#goods3 a:hover,#goods4 a:hover{
+  opacity: 0.7;
+}
+
+#goods1,#goods2,#goods3,#goods4{
+float: left;
+width: 15%;
+background:white;
+padding: 20px 0 20px 0;
+margin-top: 30px;
+}
+
+#goods1,#goods2,#goods3,#goods4{
+margin-left: 8%;
+}
+
+
+
+#news{
+clear: both;
+text-align: center;
+margin: 0 auto;
+margin-bottom:100px;
+}
+
+#newsgazo{
+margin: 0 auto;
+height: auto;
+max-width: 960px;
+color: #765506;
+padding-top: 40px ;
+}
+
+#newsgazo h1{
+font-size: 30px;
+}
+
+#news1{
+width: 33%;
+float: left;
+padding-bottom: 100px;
+}
+
+#news1 a:hover{
+opacity: 0.7;
+}
+
+#news1 a figcaption:hover{
+  opacity: 0.7;
+} 
+
+#news2{
+width: 33%;
+float: left;
+padding-bottom: 100px;
+}
+
+
+#news2 a:hover{
+  opacity: 0.7;
+}
+
+#news2 a figcaption:hover{
+  opacity: 0.7;
+} 
+
+#news3{
+width: 33%;
+float: left;
+padding-bottom: 100px;
+}
+
+#news3 a:hover{
+  opacity: 0.7;
+} 
+
+#news3 a figcaption:hover{
+  opacity: 0.7;
+} 
+
+
+/* リンクの下線を消す*/
+#news1 a, #news2 a, #news3 a{
+color: #765506;
+text-decoration: none;
+}
+
+footer{
+text-align: center;
+clear: both;
+width: 100%;
+border-top: solid 1px #765506;
+}
